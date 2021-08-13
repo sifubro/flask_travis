@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://sweetcode.io/flask-app-github-travis-heroku/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- Meta Tags -->
+	
+
+    <!-- Title -->
+    
+    <!-- Mobile Device Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- The HTML5 Shim for older browsers (mostly older versions of IE). -->
+	<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+
+	<!-- Favicons and rss / pingback -->
+    <link rel="alternate" type="application/rss+xml" title="Sweetcode.io RSS Feed" href="https://sweetcode.io/feed/">
+    <link rel="pingback" href="https://sweetcode.io/xmlrpc.php">
+    <link rel="shortcut icon" type="image/png" href="https://sweetcode.io/wp-content/uploads/2016/08/sweetcode-favicon.png">
+
+    <!-- Custom style -->
+    <style type="text/css">html body, #sb-site { background-color: #fafafa !important;}.front-overlay-content { background: url(https://sweetcode.io/wp-content/uploads/2016/08/sweetcode-banner-background.jpg);}a:hover,ul.right-menu li i,.sb-slidebar span i:hover,ul.ph-icons li:hover i,ul.ph-icons li.current-menu-item a,.top-social li a,div.views-nr,.article-meta,ul.comment li span.comment-author,#mcTagMap .tagindex h4, #sc_mcTagMap .tagindex h4,ul.footer-social li a,.footer-menu li.current a { color: #fe0055 !important;}.wp-pagenavi span.current, .wp-pagenavi a:hover, .red-entry,.jquerycssmenu ul li ul li:hover,.tags-slidebar h3.title span,#searchform2 .buttonicon,.media-icon,.entry-bottom h3.title span,.sidebar .widget h3.title span,.comments h3.comment-reply-title span,#commentform #sendemail,#contactform .sendemail { background-color: #fe0055 !important;}#mcTagMap .tagindex h4, #sc_mcTagMap .tagindex h4 { border-bottom: 5px solid #fe0055 !important;}</style>
+
+    <!-- Theme output -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v16.8 (Yoast SEO v16.8) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>CI/CD: Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io</title>
+	<meta name="description" content="The advent of Agile development means developers can deliver software products tailored to meet customer design specifications and requirements. In an">
+	<link rel="canonical" href="https://sweetcode.io/flask-app-github-travis-heroku/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="CI/CD: Flask App + GitHub, Travis, &amp; Heroku">
+	<meta property="og:description" content="The advent of Agile development means developers can deliver software products tailored to meet customer design specifications and requirements. In an">
+	<meta property="og:url" content="https://sweetcode.io/flask-app-github-travis-heroku/">
+	<meta property="og:site_name" content="Sweetcode.io">
+	<meta property="article:publisher" content="https://facebook.com/sweetcodehq">
+	<meta property="article:published_time" content="2019-01-07T19:00:39+00:00">
+	<meta property="article:modified_time" content="2021-02-20T15:18:20+00:00">
+	<meta property="og:image" content="https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-1024x384.png">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@SweetCodeHQ">
+	<meta name="twitter:site" content="@SweetCodeHQ">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Samuel Atule">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="10 minutes">
+	<script id="facebook-jssdk" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/sdk.js.download"></script><script src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/all.js.download" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/analytics.js.download"></script><script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sweetcode.io/#organization","name":"Fixate IO, LLC","url":"https://sweetcode.io/","sameAs":["https://facebook.com/sweetcodehq","https://twitter.com/SweetCodeHQ"],"logo":{"@type":"ImageObject","@id":"https://sweetcode.io/#logo","inLanguage":"en-US","url":"https://sweetcode.io/wp-content/uploads/2016/11/Sweetcode-Sticker-URL.png","contentUrl":"https://sweetcode.io/wp-content/uploads/2016/11/Sweetcode-Sticker-URL.png","width":1024,"height":269,"caption":"Fixate IO, LLC"},"image":{"@id":"https://sweetcode.io/#logo"}},{"@type":"WebSite","@id":"https://sweetcode.io/#website","url":"https://sweetcode.io/","name":"Sweetcode.io","description":"All Tech, No Fluff.","publisher":{"@id":"https://sweetcode.io/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://sweetcode.io/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://sweetcode.io/flask-app-github-travis-heroku/#primaryimage","inLanguage":"en-US","url":"https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-1024x384.png","contentUrl":"https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-1024x384.png"},{"@type":"WebPage","@id":"https://sweetcode.io/flask-app-github-travis-heroku/#webpage","url":"https://sweetcode.io/flask-app-github-travis-heroku/","name":"CI/CD: Flask App + GitHub, Travis, & Heroku &ndash; Sweetcode.io","isPartOf":{"@id":"https://sweetcode.io/#website"},"primaryImageOfPage":{"@id":"https://sweetcode.io/flask-app-github-travis-heroku/#primaryimage"},"datePublished":"2019-01-07T19:00:39+00:00","dateModified":"2021-02-20T15:18:20+00:00","description":"The advent of Agile development means developers can deliver software products tailored to meet customer design specifications and requirements. In an","breadcrumb":{"@id":"https://sweetcode.io/flask-app-github-travis-heroku/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://sweetcode.io/flask-app-github-travis-heroku/"]}]},{"@type":"BreadcrumbList","@id":"https://sweetcode.io/flask-app-github-travis-heroku/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sweetcode.io/"},{"@type":"ListItem","position":2,"name":"CI/CD: Flask App + GitHub, Travis, &#038; Heroku"}]},{"@type":"Article","@id":"https://sweetcode.io/flask-app-github-travis-heroku/#article","isPartOf":{"@id":"https://sweetcode.io/flask-app-github-travis-heroku/#webpage"},"author":{"@id":"https://sweetcode.io/#/schema/person/a598746e7ba97fee19bae2ceb124853a"},"headline":"CI/CD: Flask App + GitHub, Travis, &#038; Heroku","datePublished":"2019-01-07T19:00:39+00:00","dateModified":"2021-02-20T15:18:20+00:00","mainEntityOfPage":{"@id":"https://sweetcode.io/flask-app-github-travis-heroku/#webpage"},"wordCount":2015,"commentCount":0,"publisher":{"@id":"https://sweetcode.io/#organization"},"image":{"@id":"https://sweetcode.io/flask-app-github-travis-heroku/#primaryimage"},"thumbnailUrl":"https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-1024x384.png","keywords":["flask","git","heroku","travis","travis ci","tutorial"],"articleSection":["Application Development"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://sweetcode.io/flask-app-github-travis-heroku/#respond"]}]},{"@type":"Person","@id":"https://sweetcode.io/#/schema/person/a598746e7ba97fee19bae2ceb124853a","name":"Samuel Atule","image":{"@type":"ImageObject","@id":"https://sweetcode.io/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/6edf49f758a4eaf873a7bab843499bbd?s=96&d=retro&r=r","contentUrl":"https://secure.gravatar.com/avatar/6edf49f758a4eaf873a7bab843499bbd?s=96&d=retro&r=r","caption":"Samuel Atule"},"description":"Samuel is a software developer at an investment banking firm. He works on developing Rest services with Java, and frontend with the popular React framework.","url":"https://sweetcode.io/author/satule/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Sweetcode.io » Feed" href="https://sweetcode.io/feed/">
+<link rel="alternate" type="application/rss+xml" title="Sweetcode.io » Comments Feed" href="https://sweetcode.io/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Sweetcode.io » CI/CD: Flask App + GitHub, Travis, &amp; Heroku Comments Feed" href="https://sweetcode.io/flask-app-github-travis-heroku/feed/">
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v7.18.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/js" type="text/javascript" data-cfasync="false" async=""></script>
+			<script type="text/javascript" data-cfasync="false">
+				var mi_version = '7.18.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStr = 'ga-disable-UA-58447906-5';
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					return document.cookie.indexOf( disableStr + '=true' ) > - 1;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					window[disableStr] = true;
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+					window[disableStr] = true;
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+				if ( mi_track_user ) {
+					function __gtagTracker() {dataLayer.push( arguments );}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+						                    });
+					__gtagTracker( 'config', 'UA-58447906-5', {
+						forceSSL:true,anonymize_ip:true,					} );
+										window.gtag = __gtagTracker;										(
+						function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+										if ( args.hasOwnProperty(arg) && gaMap.hasOwnProperty(arg) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						}
+					)();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="avatar-manager-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/avatar-manager.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="anthemes_shortcode_styles-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/anthemes-shortcodes.css" type="text/css" media="all">
+<link rel="stylesheet" id="document-gallery-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/style.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="tt-easy-google-fonts-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="default-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/default.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fancyboxcss-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/jquery.fancybox-1.3.4.css" type="text/css" media="all">
+<link rel="stylesheet" id="cookie-notice-front-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/front.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-menu-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/responsive-menu-1.css" type="text/css" media="all">
+<link rel="stylesheet" id="enlighterjs-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/enlighterjs.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wdcp_comments-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/comments.css" type="text/css" media="all">
+<link rel="stylesheet" id="wdcp_comments-specific-css" href="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/comments-specific.css" type="text/css" media="all">
+<style type="text/css">.document-icon-row {
+  padding-bottom: 40px !important;
+}
+
+span.title {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}</style>
+		<script type="text/javascript">
+			ajaxurl = typeof(ajaxurl) !== 'string' ? 'https://sweetcode.io/wp-admin/admin-ajax.php' : ajaxurl;
+		</script>
+		<script type="text/javascript">var _wdcp_ajax_url="https://sweetcode.io/wp-admin/admin-ajax.php";</script><script type="text/javascript">var _wdcp_data={"post_id":81159,"fit_tabs":1,"text":{"reply":"Reply","cancel_reply":"Cancel reply","please_wait":"Please, wait..."},"preferred_provider":"facebook"};</script><script type="text/javascript" id="monsterinsights-frontend-script-js-extra">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/sweetcode.io","hash_tracking":"false","ua":"UA-58447906-5"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/frontend-gtag.min.js.download" id="monsterinsights-frontend-script-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/jquery.min.js.download" id="jquery-core-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/avatar-manager.min.js.download" id="avatar-manager-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/wp-hide-post-public.js.download" id="wp-hide-post-js"></script>
+<script type="text/javascript" id="cookie-notice-front-js-extra">
+/* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/sweetcode.io\/wp-admin\/admin-ajax.php","nonce":"697714bff8","hideEffect":"fade","position":"bottom","onScroll":"0","onScrollOffset":"100","onClick":"0","cookieName":"cookie_notice_accepted","cookieTime":"2592000","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"0","cache":"1","refuse":"0","revokeCookies":"0","revokeCookiesOpt":"automatic","secure":"1"};
+/* ]]> */
+</script>
+<script async="" type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/front.min.js.download" id="cookie-notice-front-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/responsive-menu-1.js.download" id="responsive-menu-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/all.js(1).download" id="facebook-all-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/comments.js.download" id="wdcp_comments-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/twitter.js.download" id="wdcp_twitter-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/facebook.js.download" id="wdcp_facebook-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/google.js.download" id="wdcp_google-js"></script>
+<link rel="https://api.w.org/" href="https://sweetcode.io/wp-json/"><link rel="alternate" type="application/json" href="https://sweetcode.io/wp-json/wp/v2/posts/81159"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sweetcode.io/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://sweetcode.io/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="https://sweetcode.io/?p=81159">
+		<style type="text/css" id="wp-custom-css">
+			ul.right-menu li {
+	padding: 15px 15px 12px 15px !important;
+}
+
+.content article h1 {
+	font-size: 32px;
+	line-height: 42px;
+}
+
+.content article h2 {
+	font-size: 28px;
+	line-height: 38px;
+}
+
+.content article h3 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.content article h4 {
+	font-size: 22px;
+	line-height: 32px;
+}
+
+.content article h5 {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.article-meta {
+	font-size: 14px !important
+}		</style>
+		<style id="tt-easy-google-font-styles" type="text/css">p { }
+h1 { color: #414141; font-family: 'Work Sans'; font-size: 60px; font-style: normal; font-weight: 700; text-decoration: none; text-transform: none; }
+h2 { font-family: 'Work Sans'; font-size: 28px; font-style: normal; font-weight: 200; text-decoration: none; text-transform: none; }
+h3 { font-family: 'Work Sans'; font-style: normal; font-weight: 100; }
+h4 { font-family: 'Work Sans'; font-style: normal; font-weight: 100; }
+h5 { font-family: 'Work Sans'; font-style: normal; font-weight: 100; }
+h6 { font-family: 'PT Sans'; font-style: normal; font-weight: 400; }
+body,html,p { font-family: 'Merriweather Sans'!important; font-style: normal!important; font-weight: 300!important; }
+h2 { color: #3f3244!important; font-family: 'Bree Serif'!important; font-size: 18px!important; font-style: normal!important; font-weight: 400!important; line-height: 1.2!important; }
+h3 { font-family: 'Bree Serif'!important; font-style: normal!important; font-weight: 400!important; }
+</style>
+<style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_new_ui_mobile_overlay_active{overflow:hidden}@keyframes fb_mpn_landing_page_slide_in{0%{border-radius:50%;margin:0 24px;width:60px}40%{border-radius:18px}100%{margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_in_from_left{0%{border-radius:50%;left:12px;margin:0 24px;width:60px}40%{border-radius:18px}100%{left:12px;margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+<body class="post-template-default single single-post postid-81159 single-format-standard responsive-menu-slide-top cookies-set cookies-refused">
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=301780950195623";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Begin Header -->
+<header class="main">
+    <div class="wrap">
+        <!-- Logo -->
+        <a href="https://sweetcode.io/"><img class="logo" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/Sweetcode-gray-shadow-300px.png" alt="Sweetcode.io"></a>
+
+    	<!-- Search Form get_search_form(); -->
+        <form id="searchform1" method="get" action="https://sweetcode.io/">
+            <input placeholder="Search ..." type="text" name="q" id="q">
+            <input type="submit" value="Search" class="buttonicon1">
+        </form>
+
+        <!-- Navigation Menu -->
+        <nav id="myjquerymenu" class="jquerycssmenu">
+            <ul><li id="menu-item-606" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-606"><a href="https://sweetcode.io/home/">HOME</a></li>
+<li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="https://sweetcode.io/about-sweetcode-blog-content/">ABOUT</a></li>
+<li id="menu-item-87274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-87274"><a href="https://sweetcode.io/home/">MARKET GUIDES<img src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/arrow-down.png" class="downarrowclass" style="border:0;"></a>
+<ul class="sub-menu" style="top: 30px; visibility: visible; left: 0px; display: none;">
+	<li id="menu-item-106965" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106965"><a href="https://sweetcode.io/tag/activestate/">Active State</a></li>
+	<li id="menu-item-106903" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106903"><a href="https://sweetcode.io/tag/broadcom-technical-content/">Broadcom</a></li>
+	<li id="menu-item-108788" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108788"><a href="https://sweetcode.io/tag/logdna/">LogDNA</a></li>
+	<li id="menu-item-108401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108401"><a href="https://sweetcode.io/tag/palo-alto-networks/">Palo Alto Networks / Prisma</a></li>
+	<li id="menu-item-105692" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-105692"><a href="https://sweetcode.io/tag/platform9/">Platform9</a></li>
+	<li id="menu-item-96873" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-96873"><a href="https://sweetcode.io/tag/victorops">Splunk On-Call</a></li>
+	<li id="menu-item-107388" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107388"><a href="https://sweetcode.io/tag/stackpulse/">StackPulse</a></li>
+	<li id="menu-item-108539" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108539"><a href="https://sweetcode.io/tag/sumologic">SumoLogic</a></li>
+</ul>
+</li>
+<li id="menu-item-108433" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108433"><a href="https://sweetcode.io/tag/tutorial/">Tutorials</a></li>
+</ul>        </nav><!-- end #myjquerymenu -->
+
+        <!-- Right Menu -->
+        <nav>
+            <ul class="right-menu">
+                <li class="open-left">
+                                            <a href="https://sweetcode.io/contribute-to-sweetcode/"><img src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/slack-icon.png" alt="Join Community" style="margin-top:5px;max-width:25px"><br>Join Community</a>                                    </li>
+            </ul>
+        </nav>
+
+    </div><!-- end .top-header -->
+</header><!-- end #header -->
+<div class="clear"></div>
+
+
+<!-- Begin Content -->
+<section class="wrap" style="padding: 113px 0 30px 0;">
+
+                    
+            
+            
+                    
+    <!-- Begin Main Content -->
+    <div class="content">
+
+        <article>
+                                    <div class="post post-81159 type-post status-publish format-standard hentry category-front-end-application-development tag-flask tag-git tag-heroku tag-travis tag-travis-ci tag-tutorial" id="post-81159">
+
+            
+                
+            
+
+                    <div class="entry-top">
+                        <h1 class="article-title entry-title">CI/CD: Flask App + GitHub, Travis, &amp; Heroku</h1>
+                        <div class="article-author-img"><img alt="" class="avatar avatar-60 photo avatar-default" height="60" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/avatar-samuel-atule-60x60.png" width="60"></div>
+                        <div class="views-nr">10570 <span id="views">VIEWS</span><div class="clear"></div></div>
+                        <!-- <div class="article-meta"></div> -->
+                        <div class="article-meta vcard author"><span class="fn">by <a href="https://sweetcode.io/author/satule/" title="Posts by Samuel Atule" rel="author">Samuel Atule</a></span></div>
+                        <div class="article-meta updated">3 years  ago</div><br>
+                        <div class="article-meta" id="cat-border">In <a href="https://sweetcode.io/category/front-end-application-development/" rel="category tag">Application Development</a></div>
+                        <div class="clear"></div>
+
+                        <!-- TAGS -->
+                                                <div class="simplebtn smallbtn red-entry"><a href="https://sweetcode.io/tag/flask/" rel="tag">flask</a> · <a href="https://sweetcode.io/tag/git/" rel="tag">git</a> · <a href="https://sweetcode.io/tag/heroku/" rel="tag">heroku</a> · <a href="https://sweetcode.io/tag/travis/" rel="tag">travis</a> · <a href="https://sweetcode.io/tag/travis-ci/" rel="tag">travis ci</a> · <a href="https://sweetcode.io/tag/tutorial/" rel="tag">tutorial</a></div>
+                        <div class="clear"></div>
+                        
+                        <div class="clear"></div>
+                    </div><div class="clear"></div>
+
+                    <div class="entry">
+                        
+                        <!-- entry content -->
+                        <p><span style="font-weight: 400;">The advent of </span><a href="https://en.wikipedia.org/wiki/Agile_software_development"><span style="font-weight: 400;">Agile development</span></a><span style="font-weight: 400;"> means developers can deliver software products tailored to meet customer design specifications and requirements. In an Agile development environment, smaller groups in a team often work on different aspects of a larger project and commit regularly. The frequent addition of smaller chunks of code to the codebase through version control ensures that previous work is recoverable. However, this frequent addition of code to the codebase can break the existing codebase without proper communication and monitoring. To minimize this manual scrutiny and redundant communication, we need to invest in CI/CD processes. In &nbsp;this article, we will walk through an end-to-end workflow of automating a CI/CD process for a Flask application via Travis CI and Heroku.</span></p>
+<h2><b>CI/CD</b></h2>
+<p><a href="https://en.wikipedia.org/wiki/Continuous_integration"><span style="font-weight: 400;">Continuous integration</span></a><span style="font-weight: 400;"> places much emphasis on automating test procedures to check that the application is not broken when new commit are made to the main branch. In CI, developers commits their changes back to the main branch as frequently as possible. For each commit, a build is created and the automated tests are run against it to validate it before it moves to the next stage in the CI/CD pipeline. This prevents the difficulties resulting from developers having to wait until the software release date to merge their changes.</span></p>
+<p><span style="font-weight: 400;">With Agile development, software can be released at any time. If you can’t release new changes to your customers as quickly as possible, then it’s not Agile. </span><a href="https://en.wikipedia.org/wiki/Continuous_delivery"><span style="font-weight: 400;">Continuous delivery</span></a><span style="font-weight: 400;"> is responsible for ensuring that the software can be released at any time. A successful exit from the continuous integration stage moves the continuous delivery stage where a series of automated and manual tests from the QA team verifies that the product meets production requirements. </span></p>
+<p><a href="https://en.wikipedia.org/wiki/Continuous_delivery"><span style="font-weight: 400;">Continuous delivery</span></a><span style="font-weight: 400;"> ensures that every change to the main branch that passes all the stages of the production pipeline gets deployed to the production environment — except when a failed test occurs within the pipeline, in which case, a previous version of the software gets released instead.</span></p>
+<h2><b>What we are building</b></h2>
+<p><span style="font-weight: 400;">We are going to build a modern CI/CD pipeline for a simple Flask application for question-answering, a simple NLP project. And in this tutorial, we will go through all the processes involved in a modern CI/CD workflow (illustrated below):</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81208" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/ci-cd-image-1024x384-1024x384.png" alt="" width="650" height="244" srcset="https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-300x113.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-768x288.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-250x94.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/ci-cd-image-1024x384-990x371.png 990w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Source: </span><a href="https://volansys.com/continuous-integration-continuous-deployment-bandwagon-of-agile-development/"><span style="font-weight: 400;">volansys.com</span></a></p>
+<p><span style="font-weight: 400;">In this tutorial, we’ll specifically do the following:</span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Create a GitHub repository for our project.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Code our Flask application with the Python Flask Framework.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Push our Flask application to GitHub.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Add automated tests to our Flask application</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">unittest and pytest for testing code logic</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Flake8 for testing code style</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">(We won’t do integration tests in this tutorial.)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Set up Travis CI to run our automated tests for each commit</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Create a Docker image to package our Flask application</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Push Docker image to DockerHub.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Deploy Docker image to Heroku.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Set up Travis CI to automatically run all tests, create a Docker image, push the image to DockerHub, and Deploy Docker to live servers on Heroku. This process will be done automatically for each commit to our GitHub repository.</span></li>
+</ol>
+<p><br></p>
+<ol>
+<li><b>Creating a GitHub repository for our project</b></li>
+</ol>
+<p><span style="font-weight: 400;">Start by creating a GitHub (or any version control) repository for our application. This step is necessary for any CI/CD, because Travis CI will directly retrieve and build our application from the GitHub repository.</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81209" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/github-1024x635.png" alt="" width="650" height="403" srcset="https://sweetcode.io/wp-content/uploads/2019/01/github-1024x635.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/github-300x186.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/github-768x476.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/github-250x155.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/github-990x614.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/github.png 1173w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">GitHub repository setup for our Flask application</span></p>
+<ol start="2">
+<li><b> Let’s code our simple Flask application (askme)</b></li>
+</ol>
+<p><span style="font-weight: 400;">We will be building a simple NLP project for question-answering with a web interface using the Flask framework. Askme will take a question and magically output an answer — However, this is not the focus of the tutorial, so you can use your own application to follow along.</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81210" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/flaskapp-1024x530.png" alt="" width="650" height="336" srcset="https://sweetcode.io/wp-content/uploads/2019/01/flaskapp-1024x530.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/flaskapp-300x155.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/flaskapp-768x398.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/flaskapp-250x129.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/flaskapp-990x513.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/flaskapp.png 1340w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Interface of the askme Flask application</span></p>
+<p><span style="font-weight: 400;">This is how the source code of our project currently looks from VS Code:</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81211" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/vscode-1024x568.png" alt="" width="650" height="361" srcset="https://sweetcode.io/wp-content/uploads/2019/01/vscode-1024x568.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/vscode-300x166.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/vscode-768x426.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/vscode-250x139.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/vscode-990x549.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/vscode.png 1340w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Source code of project from VS Code</span></p>
+<p><span style="font-weight: 400;">Once you have your project working on your local server, push to GitHub. Now that we have a working version on GitHub, let’s add automated tests to our application.</span></p>
+<ol start="3">
+<li><b> Add automated tests to our Flask application</b></li>
+</ol>
+<p><span style="font-weight: 400;">We will write two tests for this application. The first test checks that the </span><span style="font-weight: 400;">/askme </span><span style="font-weight: 400;">endpoint returns a 200 status code. And the second test simply checks that the number of lines in the answers.txt file is 2609 (which is true). So far, your project folder directory should look something like this:</span></p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-81212" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/folderstructure.png" alt="" width="264" height="269" srcset="https://sweetcode.io/wp-content/uploads/2019/01/folderstructure.png 264w, https://sweetcode.io/wp-content/uploads/2019/01/folderstructure-250x255.png 250w" sizes="(max-width: 264px) 100vw, 264px"></p>
+<p><span style="font-weight: 400;">Project folder directory</span></p>
+<p><span style="font-weight: 400;">Next, run your tests locally, and make sure your code passes all test cases. To run the tests, </span><span style="font-weight: 400;">install pytest </span><span style="font-weight: 400;">and run the following command in your root project directory: </span><span style="font-weight: 400;">python -m pytest -v tests/test_class.py</span><span style="font-weight: 400;">. When your code passes all test cases, commit and push to GitHub. To check our code style with flake8, we will make Travis CI run that for us. We will skip integration tests for this tutorial, but it’s important to have these tests in your project.</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81213" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/tests-1024x562.png" alt="" width="650" height="357" srcset="https://sweetcode.io/wp-content/uploads/2019/01/tests-1024x562.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/tests-300x165.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/tests-768x421.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/tests-250x137.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/tests-990x543.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/tests.png 1353w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Content of test_class.py and results from running tests</span></p>
+<ol start="4">
+<li><b> Set up Travis CI to run automated builds and tests</b></li>
+</ol>
+<p><span style="font-weight: 400;">Travis CI offers continuous integration services, and is extremely easy to set up. Proceed to </span><a href="https://travis-ci.org/"><span style="font-weight: 400;">travis-ci.org</span></a><span style="font-weight: 400;">, and sign in with your GitHub account. After signing in, you will find a list of all your public GitHub repositories. To enable Travis CI, track your repository, and build your project for each push, flip the switch next to your project repository:</span></p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-81214" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/travis.png" alt="" width="669" height="273" srcset="https://sweetcode.io/wp-content/uploads/2019/01/travis.png 669w, https://sweetcode.io/wp-content/uploads/2019/01/travis-300x122.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/travis-250x102.png 250w" sizes="(max-width: 669px) 100vw, 669px"></p>
+<p><span style="font-weight: 400;">Enable tracking for your GitHub repo on Travis CI</span></p>
+<p><span style="font-weight: 400;">After activating Travis CI to track your project repository, add a </span><span style="font-weight: 400;">.travis.yml</span><span style="font-weight: 400;"> file to the root of your project directory and add the following lines to it:</span></p>
+<pre>install:
+- pip install -r requirements.txt
+# command to run tests
+script:
+# unit test
+- python -m pytest -v
+# linting test
+- flake
+</pre>
+<p><span style="font-weight: 400;">Additionally, create a </span><span style="font-weight: 400;">requirements.txt</span><span style="font-weight: 400;"> file in the root of your project directory, and list all packages that are required to be installed before your project can run. List the following packages:</span></p>
+<ul>
+<li>pytest</li>
+<li>flake8</li>
+<li>pandas</li>
+<li>flask</li>
+<li>nltk</li>
+<li>pathlib</li>
+<p>Your project directory should look something like this:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-81215" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/req.png" alt="" width="261" height="267" srcset="https://sweetcode.io/wp-content/uploads/2019/01/req.png 261w, https://sweetcode.io/wp-content/uploads/2019/01/req-250x256.png 250w" sizes="(max-width: 261px) 100vw, 261px"></p>
+<p><span style="font-weight: 400;">Commit all your changes and push to GitHub, and watch Travis CI take it up, build it and run all automated tests in your Travis CI dashboard.</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81216" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/travisoutput-1024x479.png" alt="" width="650" height="304" srcset="https://sweetcode.io/wp-content/uploads/2019/01/travisoutput-1024x479.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/travisoutput-300x140.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/travisoutput-768x359.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/travisoutput-250x117.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/travisoutput-990x463.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/travisoutput.png 1343w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Part of build for project on Travis CI dashboard</span></p>
+<ol start="5">
+<li><b> Create a Docker</b> <b>image to package our Flask application</b></li>
+</ol>
+<p><span style="font-weight: 400;">Docker is a software platform designed to make it easier to create, deploy, and run applications by using </span><a href="https://www.docker.com/resources/what-container"><span style="font-weight: 400;">containers</span></a><span style="font-weight: 400;">. It will contain all the parts needed for our application to run as a single package. The importance of this is that we can run our application on any environment without worrying about dependencies breaking our code.</span></p>
+<p><span style="font-weight: 400;">To Dockerize our application, first </span><a href="https://docs.docker.com/install/"><span style="font-weight: 400;">download and install</span></a><span style="font-weight: 400;"> Docker and make sure that it is running on your computer. The command </span><span style="font-weight: 400;">docker –version </span><span style="font-weight: 400;">should output the version of Docker you are using in your terminal to indicate a successful installation.</span></p>
+<p><span style="font-weight: 400;">Once you have </span><span style="font-weight: 400;">docker </span><span style="font-weight: 400;">running locally, add a file called </span><span style="font-weight: 400;">Dockerfile </span><span style="font-weight: 400;">to the root directory of your project, and add the following lines to it:</span></p>
+<pre>FROM ubuntu:latest
+MAINTAINER &lt;your name&gt; &lt;your email&gt;
+RUN apt-get update -y
+RUN apt-get install -y python-pip python-dev build-essential
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+ENTRYPOINT ["python"]
+CMD ["qa/app.py"]</pre>
+<p><span style="font-weight: 400;">These lines will instruct Docker to pick the latest Ubuntu image, update its repository, install </span><i><span style="font-weight: 400;">python-pip</span></i><span style="font-weight: 400;">,</span> <i><span style="font-weight: 400;">python-dev</span></i><span style="font-weight: 400;">, and </span><i><span style="font-weight: 400;">build-essential </span></i><span style="font-weight: 400;">and launch our Flask application when the container is ready. </span></p>
+<p><span style="font-weight: 400;">These lines in the Dockerfile build the image locally. We need to deploy it to DockerHub after each build, to make it shareable on multiple environments, and we can automate the build and deployment to DockerHub from Travis CI.</span></p>
+<ol start="6">
+<li><b>Push the Docker image to DockerHub.</b></li>
+</ol>
+<p><span style="font-weight: 400;">To enable Travis CI to orchestrate this build and deployment to DockerHub, create a directory called </span><span style="font-weight: 400;">.travis</span><span style="font-weight: 400;"> in your root directory and add a file called </span><span style="font-weight: 400;">deploy_dockerhub.sh. </span><span style="font-weight: 400;">Add the following lines to the created file:</span></p>
+<pre>docker login --username $DOCKER_USER --password $DOCKER_PASS
+if [ "$TRAVIS_BRANCH" = "master" ]; then
+TAG="latest"
+else
+TAG="$TRAVIS_BRANCH"
+fi
+docker build -f Dockerfile -t $TRAVIS_REPO_SLUG:$TAG .
+docker tag $TRAVIS_REPO_SLUG $DOCKER_REPO
+docker push $DOCKER_REPO</pre>
+<p><span style="font-weight: 400;">Under the Settings view of your repository on Travis CI, set the environment variables used in the script as shown:</span></p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-81217" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/env.png" alt="" width="776" height="330" srcset="https://sweetcode.io/wp-content/uploads/2019/01/env.png 776w, https://sweetcode.io/wp-content/uploads/2019/01/env-300x128.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/env-768x327.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/env-250x106.png 250w" sizes="(max-width: 776px) 100vw, 776px"></p>
+<p><span style="font-weight: 400;">Finally, in your</span><span style="font-weight: 400;"> .travis.yml</span><span style="font-weight: 400;"> file, add the following lines to it:</span></p>
+<pre>after_success:
+- sh .travis/deploy_dockerhub.sh</pre>
+<p><span style="font-weight: 400;">Then, add the following lines to the beginning of your </span><span style="font-weight: 400;">.travis.yml</span><span style="font-weight: 400;"> file:</span></p>
+<pre>sudo: required
+services
+- docker</pre>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81218" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/ymlfile-1024x381.png" alt="" width="650" height="242" srcset="https://sweetcode.io/wp-content/uploads/2019/01/ymlfile-1024x381.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/ymlfile-300x111.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/ymlfile-768x285.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/ymlfile-250x93.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/ymlfile-990x368.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/ymlfile.png 1359w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Project directory structure and .travis.yml content from VS Code</span></p>
+<p><span style="font-weight: 400;">Commit all your changes and push to GitHub, and once again watch Travis CI orchestrate this process on your behalf. Travis CI will build your project, run all your automated tests, install Docker, build the Docker image, launch the image when the container is ready, and deploy it to DockerHub. In the event of any failure, you will be notified through your email.</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81225" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/dockerdigest-1024x496.png" alt="" width="650" height="315" srcset="https://sweetcode.io/wp-content/uploads/2019/01/dockerdigest-1024x496.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/dockerdigest-300x145.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/dockerdigest-768x372.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/dockerdigest-250x121.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/dockerdigest-990x479.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/dockerdigest.png 1338w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Docker digest pushed to DockerHub from Travis CI</span></p>
+<p><span style="font-weight: 400;">Now, let’s try to launch the built image of our Flask application on our local computer from our container at DockerHub. Run: </span></p>
+<pre>docker run -p 5000:5000 --rm -it ci-cd-with-travis</pre>
+<p><span style="font-weight: 400;">from the terminal on your local computer and see the log of the application running from DockerHub. The beauty of pushing to DockerHub is that we can now launch our application from DockerHub from any environment.</span></p>
+<p><span style="font-weight: 400;">Log of application running from our Docker container at DockerHub from our local computer</span></p>
+<p><span style="font-weight: 400;">This output shows that everything from our pipeline is working perfectly so far. The next step is to make Travis CI deploy our Docker image from DockerHub to a live server in Heroku, so that we can access our application on the Web.</span></p>
+<ol start="7">
+<li><b> Deploy Docker image to Heroku</b></li>
+</ol>
+<p><span style="font-weight: 400;">Heroku is a hosting platform for applications. It also offers a free service for lightweight applications, so we will host our project with Heroku. But we will first need to create an account at</span><a href="https://signup.heroku.com/"><span style="font-weight: 400;"> heroku.com</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Additionally, we will use the Heroku CLI from our local terminal to create our application, so download and install the Heroku Command Line tool from </span><a href="https://devcenter.heroku.com/articles/heroku-cli"><span style="font-weight: 400;">Heroku Dev Center</span></a><span style="font-weight: 400;">. Make sure Heroku can be invoked via your computer’s terminal, and run the following to create the application:</span></p>
+<pre>heroku login
+heroku create</pre>
+<p><span style="font-weight: 400;">Creating app… done, desolate-dawn-14339</span></p>
+<p><a href="https://desolate-dawn-14339.herokuapp.com/"><span style="font-weight: 400;">https://desolate-dawn-14339.herokuapp.com/</span></a><span style="font-weight: 400;"> | https://git.heroku.com/desolate-dawn-14339.git</span></p>
+<p><span style="font-weight: 400;">This last command creates your application and assigns it a name and a URL address, which you can use to access your application from the Web.</span></p>
+<p><span style="font-weight: 400;">Now, to allow Travis CI to pick up each successful build of our Docker image from DockerHub and deploy to Heroku, add a file called </span><span style="font-weight: 400;">deploy_heroku.sh </span><span style="font-weight: 400;">in our </span><span style="font-weight: 400;">.travis</span><span style="font-weight: 400;"> directory, and add the following lines to it:</span></p>
+<pre>wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+heroku plugins:install @heroku-cli/plugin-container-registry
+docker login --username _ --password=$HEROKU_API_KEY registry.heroku.com
+heroku container:push web --app $HEROKU_APP_NAME
+heroku container:release web --app $HEROKU_APP_NAME</pre>
+<p><span style="font-weight: 400;">Set the environment variables in the Settings view of your repository in your </span><span style="font-weight: 400;">Travis CI</span><span style="font-weight: 400;"> dashboard.</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81227" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/finalenv-1024x425.png" alt="" width="650" height="270" srcset="https://sweetcode.io/wp-content/uploads/2019/01/finalenv-1024x425.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/finalenv-300x124.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/finalenv-768x318.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/finalenv-250x104.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/finalenv-990x410.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/finalenv.png 1066w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">All environment variables from Travis CI dashboard</span></p>
+<p><span style="font-weight: 400;">The Heroku app name is the name of application generated when you run the </span><span style="font-weight: 400;">heroku create </span><span style="font-weight: 400;">command from your terminal. And the Heroku API Key can be obtained under the account settings from your Heroku account. Finally, add the following line to your </span><span style="font-weight: 400;">.travis.yml</span><span style="font-weight: 400;"> file under the </span><span style="font-weight: 400;">after_success</span><span style="font-weight: 400;"> section:</span></p>
+<pre">– test “$TRAVIS_BRANCH” = “master” &amp;&amp; sh .travis/deploy_heroku.sh
+<p><span style="font-weight: 400;">This command checks whether the repository is a master branch, and then deploys to Heroku which can then be assessed via the URL address that was generated when you ran the </span><span style="font-weight: 400;">heroku create</span><span style="font-weight: 400;"> command above.</span></p>
+<p><span style="font-weight: 400;"><img loading="lazy" class="aligncenter size-large wp-image-81228" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/finalstep-1024x560.png" alt="" width="650" height="355" srcset="https://sweetcode.io/wp-content/uploads/2019/01/finalstep-1024x560.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/finalstep-300x164.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/finalstep-768x420.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/finalstep-250x137.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/finalstep-990x541.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/finalstep.png 1357w" sizes="(max-width: 650px) 100vw, 650px"></span><span style="font-weight: 400;">Content of </span><span style="font-weight: 400;">deploy_heroku.sh file from VS Code</span></p>
+<p><span style="font-weight: 400;">Commit all changes and push to GitHub. And then watch as Travis CI once again builds the project, runs tests, builds the Docker image and pushes it to DockerHub — and then finally deploys the image to Heroku. After this process is successful, we can then view our live application from our application URL address.</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81229" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/app-1024x419.png" alt="" width="650" height="266" srcset="https://sweetcode.io/wp-content/uploads/2019/01/app-1024x419.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/app-300x123.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/app-768x314.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/app-250x102.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/app-990x405.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/app.png 1176w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Application after successful deployment from Travis CI</span><span style="font-weight: 400;"><br>
+</span></p>
+<p><span style="font-weight: 400;">Now that our CI/CD pipeline is complete, let’s add a modification to our application and push and watch what happens. Let’s change the background color of our application to yellow and push our changes, and see whether our application changes automatically after a successful deployment by Travis CI.</span></p>
+<p><span style="font-weight: 400;">And boom!! It worked!</span></p>
+<p><img loading="lazy" class="aligncenter size-large wp-image-81230" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/changebackground-1024x561.png" alt="" width="650" height="356" srcset="https://sweetcode.io/wp-content/uploads/2019/01/changebackground-1024x561.png 1024w, https://sweetcode.io/wp-content/uploads/2019/01/changebackground-300x164.png 300w, https://sweetcode.io/wp-content/uploads/2019/01/changebackground-768x421.png 768w, https://sweetcode.io/wp-content/uploads/2019/01/changebackground-250x137.png 250w, https://sweetcode.io/wp-content/uploads/2019/01/changebackground-990x543.png 990w, https://sweetcode.io/wp-content/uploads/2019/01/changebackground.png 1321w" sizes="(max-width: 650px) 100vw, 650px"></p>
+<p><span style="font-weight: 400;">Output after changing background color to yellow and pushing to GitHub</span></p>
+<p><span style="font-weight: 400;">So our CI/CD pipeline seems to be in good shape. Anytime you make changes and commit them, Travis CI will go through the same process, and will finally deploy changes to Heroku when no error exists. However, when a process fails, Travis CI will alert you via email and stop the process, and a previous version of your application will be released instead.</span></p>
+<p><span style="font-weight: 400;">Access the final version of our project source code from </span><a href="https://github.com/gudlucsam/ci-cd-with-travis"><span style="font-weight: 400;">GitHub</span></a><span style="font-weight: 400;">.</span></p>
+<p><b>References</b></p>
+<p><a href="https://www.atlassian.com/continuous-delivery/continuous-integration-tutorial"><span style="font-weight: 400;">https://www.atlassian.com/continuous-delivery/continuous-integration-tutorial</span></a></p>
+<p><a href="https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b"><span style="font-weight: 400;">https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b</span></a></p>
+<p><a href="https://runnable.com/docker/python/dockerize-your-flask-application"><span style="font-weight: 400;">https://runnable.com/docker/python/dockerize-your-flask-application</span></a></p>
+<p><a href="https://dzone.com/articles/what-is-cicd"><span style="font-weight: 400;">https://dzone.com/articles/what-is-cicd</span></a></p>
+                                                <div class="clear"></div>
+
+                        <div class="clear"></div>
+                    </pre"></ul></div><!-- end .entry --><div class="clear"></div>
+            </div><!-- end #post -->
+                    </article>
+
+        <!-- author -->
+                <div class="author-meta">
+            <div class="entry">
+                <img alt="" class="avatar avatar-100 photo avatar-default" height="100" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/avatar-samuel-atule-100x100.png" width="100">                <div class="author-info">
+                    <strong><a href="https://sweetcode.io/author/satule/" title="Posts by Samuel Atule" rel="author">Samuel Atule</a></strong> › <a class="author-link" href="https://sweetcode.io/flask-app-github-travis-heroku/" target="_blank"></a><br>
+                    <p>Samuel is a software developer at an investment banking firm. He works on developing Rest services with Java, and frontend with the popular React framework.</p>
+                </div><!-- end .autor-info -->
+            </div><!-- end .entry -->
+            <div class="clear"></div>
+        </div><!-- end .author-meta -->
+        
+        <!-- Prev and Next articles -->
+        <div class="prev-articles">
+            <div class="one_half" style="text-align: right;">Previous Article  <br><h2><a href="https://sweetcode.io/leveraging-thriftly-manage-monitor-apis-cloud/" rel="prev">Leveraging Thriftly to Manage and  Monitor APIs in the Cloud</a> </h2></div>            <div class="one_half_last">Next Article <br> <h2> <a href="https://sweetcode.io/moving-monolith-cloud-native/" rel="next">Moving from Monolith to Cloud-Native</a></h2></div><div class="clear"></div>        <div class="clear"></div>
+        </div>
+        <hr>
+
+        <div class="clear"></div>
+        <div class="entry-bottom">
+            <!-- Related Posts -->
+            <h3 class="title"><span>Discussion</span></h3>
+            <div class="comments">
+                
+
+ 
+
+
+		<div id="comment-providers-select-message">Click on a tab to select how you'd like to leave your comment</div>
+		<div id="comment-providers"><a name="comments-plus-form"></a>
+			<ul id="all-comment-providers"><li><a id="comment-provider-wordpress-link" href="https://sweetcode.io/flask-app-github-travis-heroku/#comment-provider-wordpress" style="width: 177px;"><span>Sweetcode.io</span></a></li><li class="selected-comment-provider"><a id="comment-provider-facebook-link" href="https://sweetcode.io/flask-app-github-travis-heroku/#comment-provider-facebook" style="width: 177px;"><span>Facebook</span></a></li><li><a id="comment-provider-google-link" href="https://sweetcode.io/flask-app-github-travis-heroku/#comment-provider-google" style="width: 177px;"><span>Google</span></a></li></ul><div class="comment-provider selected-comment-provider" id="comment-provider-facebook"><div class="comment-provider-login-button" id="login-with-facebook"><a href="https://sweetcode.io/flask-app-github-travis-heroku/#" title="Login with Facebook"><span>Login</span></a></div></div><div class="comment-provider" id="comment-provider-google"><div class="comment-provider-login-button" id="login-with-google"><a href="https://sweetcode.io/flask-app-github-travis-heroku/" title="Login with Google"><span>Login</span></a></div></div><div class="comment-provider no-instructions" id="comment-provider-wordpress">	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><div class"clear"=""></div><span>Leave a Comment</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://sweetcode.io/flask-app-github-travis-heroku/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://sweetcode.io/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+            <div class="one_full_c">
+               <label for="comment">Comment:<span>*</span></label>
+               <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>     
+            </div>
+            <div class="one_half_c">
+             <label for="author">Name:<span>*</span></label> 
+             <input id="author" name="author" type="text" value="" size="30" aria-required="true">
+            </div>
+
+            <div class="one_half_last_c">
+             <label for="email">Email:<span>*</span></label> 
+             <input id="email" name="email" type="text" value="" size="30" aria-required="true">
+            </div>
+<p class="form-submit"><input name="submit" type="submit" id="sendemail" class="submit" value="Submit Comment"> <input type="hidden" name="comment_post_ID" value="81159" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fa379afc0d"></p><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea><input type="hidden" id="ak_js" name="ak_js" value="1628865726363"></form>	</div><!-- #respond -->
+	</div> <!-- Wordpress provider --></div> <!-- #comment-providers -->            </div>
+            <div class="clear"></div>
+        </div><!-- end .entry-bottom -->
+
+    </div><!-- end #main content -->
+
+
+    <!-- Begin Sidebar (right) -->
+    <style>
+    .yt-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .yt-list iframe {
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+
+	.yt-title {
+    	margin-bottom: 15px;
+      	font-weight: bold;
+      	text-align: center;
+	}
+
+	.title-link {
+      text-align: center;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+	}
+
+	.sweet-videos ul li {
+      padding: 25px 25px 20px 25px;
+      width: auto;
+	}
+  </style>
+
+<div class="sidebar-wrapper" style="position: static; width: 300px; height: 1206.29px; display: block; vertical-align: baseline; float: right;">
+<aside class="sidebar is_stuck" style="position: fixed; top: -681.29px; width: 300px;">
+<div class="widget widget_text"><h3 class="title"><span>More sweetness…</span></h3><div class="clear"></div>			<div class="textwidget"><ul class="article_list">
+                
+                 
+
+              <li><div class="rel-left"><a href="https://sweetcode.io/use-java-streams-to-write-clean-java-code/">
+                                    <img width="80" height="80" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/Use-Java-Streams-to-Write-Clean-Java-Code-Samuel-Atule-80x80.png" class="attachment-thumbnail-widget size-thumbnail-widget wp-post-image" alt="" loading="lazy" srcset="https://sweetcode.io/wp-content/uploads/2021/07/Use-Java-Streams-to-Write-Clean-Java-Code-Samuel-Atule-80x80.png 80w, https://sweetcode.io/wp-content/uploads/2021/07/Use-Java-Streams-to-Write-Clean-Java-Code-Samuel-Atule-150x150.png 150w, https://sweetcode.io/wp-content/uploads/2021/07/Use-Java-Streams-to-Write-Clean-Java-Code-Samuel-Atule-198x198.png 198w" sizes="(max-width: 80px) 100vw, 80px">                  </a></div>
+                  <div class="rel-right">
+                    <div class="widget-author-img"><img alt="" class="avatar avatar-30 photo avatar-default" height="30" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/avatar-samuel-atule-30x30.png" width="30"></div>
+                    <div class="an-display-time">3 weeks  ago</div>
+                    <h3><a href="https://sweetcode.io/use-java-streams-to-write-clean-java-code/">Use Java Streams to Write Clean Java Code</a></h3>
+                    <div class="sub-article-widget">
+                      <div class="an-display-view"><i class="fa fa-eye"></i> 389</div>
+                      <div class="an-display-like"></div>
+                      <div class="an-display-comm"><i class="fa fa-comments"></i> <a href="https://sweetcode.io/use-java-streams-to-write-clean-java-code/#respond">0</a></div><div class="clear"></div>
+                    </div>
+                  </div>
+              </li>
+
+             
+
+              <li><div class="rel-left"><a href="https://sweetcode.io/how-to-implement-fuzzy-matching-in-python/">
+                  <img src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/no-image-2.png"></a></div>
+                  <div class="rel-right">
+                    <div class="widget-author-img"><img alt="" class="avatar avatar-30 photo avatar-default" height="30" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/Scott-Fitzpatrick-1-30x30.jpg" width="30"></div>
+                    <div class="an-display-time">6 months  ago</div>
+                    <h3><a href="https://sweetcode.io/how-to-implement-fuzzy-matching-in-python/">How To Implement Fuzzy Matching In Python</a></h3>
+                    <div class="sub-article-widget">
+                      <div class="an-display-view"><i class="fa fa-eye"></i> 776</div>
+                      <div class="an-display-like"></div>
+                      <div class="an-display-comm"><i class="fa fa-comments"></i> <a href="https://sweetcode.io/how-to-implement-fuzzy-matching-in-python/#respond">0</a></div><div class="clear"></div>
+                    </div>
+                  </div>
+              </li>
+
+             
+
+              <li><div class="rel-left"><a href="https://sweetcode.io/simulating-complex-systems-with-python-how-does-covid-spread/">
+                  <img src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/no-image-2.png"></a></div>
+                  <div class="rel-right">
+                    <div class="widget-author-img"><img alt="" class="avatar avatar-30 photo avatar-default" height="30" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/avatar-nicolas-bohorquez-1-30x30.png" width="30"></div>
+                    <div class="an-display-time">6 months  ago</div>
+                    <h3><a href="https://sweetcode.io/simulating-complex-systems-with-python-how-does-covid-spread/">Simulating Complex Systems With Python: How Does COVID Spread?</a></h3>
+                    <div class="sub-article-widget">
+                      <div class="an-display-view"><i class="fa fa-eye"></i> 420</div>
+                      <div class="an-display-like"></div>
+                      <div class="an-display-comm"><i class="fa fa-comments"></i> <a href="https://sweetcode.io/simulating-complex-systems-with-python-how-does-covid-spread/#respond">0</a></div><div class="clear"></div>
+                    </div>
+                  </div>
+              </li>
+
+                                          
+            </ul></div>
+		</div>
+<div class="widget widget_text"><h3 class="title" style="margin-bottom: 5px"><span>Sweet Videos</span></h3><div class="title-link"><a href="https://www.youtube.com/channel/UCesTC06CXq7lkujwnqxEP8w">Visit Channel</a></div><div class="textwidget sweet-videos"><ul class="article_list" style="padding-top:15px">          
+          <li><iframe height="100%" width="100%" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/JZCXQT4KMGo.html" frameborder="0" allowfullscreen=""></iframe></li>
+                    
+          <li><iframe height="100%" width="100%" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/ugDaAnXDp1Q.html" frameborder="0" allowfullscreen=""></iframe></li>
+                    
+          <li><iframe height="100%" width="100%" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/JZCXQT4KMGo(1).html" frameborder="0" allowfullscreen=""></iframe></li>
+          </ul></div></div>
+</aside>
+</div>    <!-- end #sidebar  (right) -->
+
+
+
+    <div class="clear"></div>
+</section><!-- end .wrap -->
+
+<div id="single-share">
+        <a class="fbbutton" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://sweetcode.io/flask-app-github-travis-heroku/"><i class="fa fa-facebook-official"></i></a>
+   	
+	    <a class="twbutton" target="_blank" href="https://twitter.com/intent/tweet?url=https://sweetcode.io/flask-app-github-travis-heroku/"><i class="fa fa-twitter"></i></a>
+    
+	    <!--  -->
+    <!-- <a class="pinbutton" target="_blank" href="https://pinterest.com/pin/create/button/?url=https://sweetcode.io/flask-app-github-travis-heroku/&amp;media=&amp;description=CI/CD: Flask App + GitHub, Travis, &#038; Heroku"><i class="fa fa-pinterest"></i></a>
+        <a class="googlebutton" target="_blank" href="https://plus.google.com/share?url=https://sweetcode.io/flask-app-github-travis-heroku/"><i class="fa fa-google-plus-square"></i></a> -->
+        <a class="emailbutton" target="_blank" href="mailto:?subject=CI/CD:%20Flask%20App%20+%20GitHub,%20Travis,%20&amp;%20Heroku&amp;body=https://sweetcode.io/flask-app-github-travis-heroku/%20The%20advent%20of%20Agile%20development%20means%20developers%20can%20deliver%20software%20products%20tailored%20to%20meet%20customer%20design%20specifications%20and%20requirements.%20.."><i class="fa fa-envelope"></i></a>
+</div><!-- end #single-share -->
+
+<div id="fb-root"></div><script>
+			FB.init({
+				appId: '301780950195623',
+				status: true,
+				cookie: true,
+				xfbml: true,
+				oauth: true
+			});
+			</script><script type="text/javascript">jQuery(function () { if ("undefined" != typeof twttr && twttr.anywhere && twttr.anywhere.config) twttr.anywhere.config({ callbackURL: "https://sweetcode.io/flask-app-github-travis-heroku/" }); });</script><!-- Begin Footer -->
+<footer> 
+    
+<div class="wrap">
+        <!-- footer menu -->
+        <nav class="menu-footer-menu-container"><ul id="menu-footer-menu" class="footer-menu"><li id="menu-item-525" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-525"><a href="https://sweetcode.io/tag-index/">TAG INDEX</a></li>
+<li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a href="https://sweetcode.io/about-sweetcode-blog-content/">ABOUT</a></li>
+<li id="menu-item-1742" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1742"><a href="https://sweetcode.io/privacy-policy/">PRIVACY POLICY</a></li>
+<li id="menu-item-911" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-911"><a href="https://sweetcode.io/join-community/">CONTRIBUTE</a></li>
+</ul></nav>  
+
+        <!-- footer social icons. -->
+        <ul class="footer-social">
+          <li><a target="_blank" href="https://twitter.com/SweetCodeHQ"><i class="fa fa-twitter"></i></a></li>
+          <li><a target="_blank" href="https://www.facebook.com/SweetCodeHQ"><i class="fa fa-facebook-square"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCesTC06CXq7lkujwnqxEP8w"><i class="fa fa-youtube"></i></a></li>
+          <li><a target="_blank" href="https://sweetcode.io/flask-app-github-travis-heroku/[site_url]?feed=rss"><i class="fa fa-rss-square"></i></a></li>
+        </ul>
+
+		<!-- copyright -->
+        <div class="clear"></div>
+        <div class="copyright">
+          				© 2020 <a class="copy-link" href="http://fixate.io/">Fixate IO, LLC</a>                    
+        </div>
+
+<div class="clear"></div>
+</div>
+</footer><!-- end #footer -->
+
+<button id="responsive-menu-button" tabindex="1" class="responsive-menu-button responsive-menu-boring responsive-menu-accessible" type="button" aria-label="Menu">
+    <span class="responsive-menu-box"><span class="responsive-menu-inner"></span>
+    </span></button><div id="responsive-menu-container" class="slide-top">
+    <div id="responsive-menu-wrapper" role="navigation" aria-label="header-menu">    <div id="responsive-menu-title">Menu    </div><ul id="responsive-menu" role="menubar" aria-label="header-menu"><li id="responsive-menu-item-606" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item" role="none"><a href="https://sweetcode.io/home/" class="responsive-menu-item-link" tabindex="1" role="menuitem">HOME</a></li><li id="responsive-menu-item-526" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item" role="none"><a href="https://sweetcode.io/about-sweetcode-blog-content/" class="responsive-menu-item-link" tabindex="1" role="menuitem">ABOUT</a></li><li id="responsive-menu-item-87274" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children responsive-menu-item responsive-menu-item-has-children" role="none"><a href="https://sweetcode.io/home/" class="responsive-menu-item-link" tabindex="1" role="menuitem">MARKET GUIDES<div class="responsive-menu-subarrow">▼</div></a><ul aria-label="MARKET GUIDES" role="menu" class="responsive-menu-submenu responsive-menu-submenu-depth-1"><li id="responsive-menu-item-106965" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/activestate/" class="responsive-menu-item-link" tabindex="1" role="menuitem">Active State</a></li><li id="responsive-menu-item-106903" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/broadcom-technical-content/" class="responsive-menu-item-link" tabindex="1" role="menuitem">Broadcom</a></li><li id="responsive-menu-item-108788" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/logdna/" class="responsive-menu-item-link" tabindex="1" role="menuitem">LogDNA</a></li><li id="responsive-menu-item-108401" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/palo-alto-networks/" class="responsive-menu-item-link" tabindex="1" role="menuitem">Palo Alto Networks / Prisma</a></li><li id="responsive-menu-item-105692" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/platform9/" class="responsive-menu-item-link" tabindex="1" role="menuitem">Platform9</a></li><li id="responsive-menu-item-96873" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/victorops" class="responsive-menu-item-link" tabindex="1" role="menuitem">Splunk On-Call</a></li><li id="responsive-menu-item-107388" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/stackpulse/" class="responsive-menu-item-link" tabindex="1" role="menuitem">StackPulse</a></li><li id="responsive-menu-item-108539" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/sumologic" class="responsive-menu-item-link" tabindex="1" role="menuitem">SumoLogic</a></li></ul></li><li id="responsive-menu-item-108433" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item" role="none"><a href="https://sweetcode.io/tag/tutorial/" class="responsive-menu-item-link" tabindex="1" role="menuitem">Tutorials</a></li></ul>    </div>
+</div>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/gallery.min.js.download" id="document-gallery-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/masonry.pkgd.min.js.download" id="masonry-pkgd-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/custom.js.download" id="customjs-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/comment-reply.min.js.download" id="comment-reply-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/jquery.fancybox-1.3.4.pack.js.download" id="fancyboxjs-js"></script>
+<script type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/enlighterjs.min.js.download" id="enlighterjs-js"></script>
+<script type="text/javascript" id="enlighterjs-js-after">
+!function(e,n){if("undefined"!=typeof EnlighterJS){var o={"selectors":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"options":{"indent":2,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":false,"textOverflow":"break","linenumbers":true,"theme":"enlighter","language":"generic","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""}};(e.EnlighterJSINIT=function(){EnlighterJS.init(o.selectors.block,o.selectors.inline,o.options)})()}else{(n&&(n.error||n.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}}(window,console);
+</script>
+<script defer="" type="text/javascript" src="./!!!!!!!CI_CD_ Flask App + GitHub, Travis, &amp; Heroku – Sweetcode.io_files/form.js.download" id="akismet-form-js"></script>
+
+		<!-- Cookie Notice plugin v2.1.0 by Hu-manity.co https://hu-manity.co/ -->
+		<div id="cookie-notice" role="banner" class="cn-position-bottom cn-effect-fade cookie-notice-hidden cookie-revoke-visible" aria-label="Cookie Notice" style="background-color: rgba(84,84,84,1);"><div class="cookie-notice-container" style="color: #fff;"><span id="cn-notice-text" class="cn-text-container">We use cookies to ensure we keep the site Sweet, and improve your experience. Continued use of the site confirms you are aware and accept.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="https://sweetcode.io/flask-app-github-travis-heroku/#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button bootstrap button" aria-label="Accept">Accept</a><a href="https://sweetcode.io/privacy-policy/" target="_blank" id="cn-more-info" class="cn-more-info cn-button bootstrap button" aria-label="Privacy policy">Privacy policy</a></span><a href="javascript:void(0);" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="Accept"></a></div>
+			
+		</div>
+		<!-- / Cookie Notice plugin -->
+<!-- Menu & link arrows -->
+<script type="text/javascript">var jquerycssmenu={fadesettings:{overduration:0,outduration:100},buildmenu:function(b,a){jQuery(document).ready(function(e){var c=e("#"+b+">ul");var d=c.find("ul").parent();d.each(function(g){var h=e(this);var f=e(this).find("ul:eq(0)");this._dimensions={w:this.offsetWidth,h:this.offsetHeight,subulw:f.outerWidth(),subulh:f.outerHeight()};this.istopheader=h.parents("ul").length==1?true:false;f.css({top:this.istopheader?this._dimensions.h+"px":0});h.children("a:eq(0)").css(this.istopheader?{paddingRight:a.down[2]}:{}).append('<img src="'+(this.istopheader?a.down[1]:a.right[1])+'" class="'+(this.istopheader?a.down[0]:a.right[0])+'" style="border:0;" />');h.hover(function(j){var i=e(this).children("ul:eq(0)");this._offsets={left:e(this).offset().left,top:e(this).offset().top};var k=this.istopheader?0:this._dimensions.w;k=(this._offsets.left+k+this._dimensions.subulw>e(window).width())?(this.istopheader?-this._dimensions.subulw+this._dimensions.w:-this._dimensions.w):k;i.css({left:k+"px"}).fadeIn(jquerycssmenu.fadesettings.overduration)},function(i){e(this).children("ul:eq(0)").fadeOut(jquerycssmenu.fadesettings.outduration)})});c.find("ul").css({display:"none",visibility:"visible"})})}};var arrowimages={down:['downarrowclass', 'https://sweetcode.io/wp-content/themes/1page-wp/images/arrow-down.png'], right:['rightarrowclass', 'https://sweetcode.io/wp-content/themes/1page-wp/images/arrow-right.png']}; jquerycssmenu.buildmenu("myjquerymenu", arrowimages); jquerycssmenu.buildmenu("myjquerymenu-cat", arrowimages);</script>
+
+
+
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me --></body></html>
